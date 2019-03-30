@@ -32,7 +32,7 @@ If automatic linking does not work, you can manually link this library by follow
 
 1. Open your project in Xcode, right click on `Libraries` and click `Add
    Files to "Your Project Name"` Look under `node_modules/react-native-cookies/ios` and add `RNCookieManagerIOS.xcodeproj`.
-2. Add `libRNCookieManagerIOS.a` to `Build Phases -> Link Binary With Libraries.
+2. Add `libRNCookieManagerIOS.a` to `Build Phases -> Link Binary With Libraries`.
 3. Clean and rebuild your project
 
 ##### Android
@@ -53,7 +53,7 @@ project(':react-native-cookies').projectDir = new File(rootProject.projectDir, '
 ```gradle
 dependencies {
    ...
-   compile project(':react-native-cookies')
+   implementation project(':react-native-cookies')
 }
 ```
 
