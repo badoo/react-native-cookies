@@ -1,5 +1,6 @@
 {
     "name": "@magiclab/react-native-cookies",
+    "private": false,
     "version": "3.3.1",
     "description": "Cookie manager for react native",
     "keywords": [
