@@ -1,5 +1,11 @@
 ## react-native-cookies
 
+#### This is a fork of [react-native-cookies](http://npmjs.com/package/react-native-cookies) with the following PRs merged in [150](https://github.com/joeferraro/react-native-cookies/pull/150), [137](https://github.com/joeferraro/react-native-cookies/pull/137), [135](https://github.com/joeferraro/react-native-cookies/pull/135), [116](https://github.com/joeferraro/react-native-cookies/pull/116)
+
+-----
+
+## Original Readme below
+
 Cookie manager for react native.
 
 [![npm version](https://badge.fury.io/js/react-native-cookies.svg)](https://badge.fury.io/js/react-native-cookies)
