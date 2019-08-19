@@ -18,8 +18,7 @@ if (Platform.OS === 'ios') {
         'react-native-cookies: Import libraries to android "react-native link react-native-cookies"'
     );
     CookieManager = {
-        getAll: (useWebKit = false) => RNCookieManagerAndroid.getAll(useWebKit),
-        clearAll: (useWebKit = false) => RNCookieManagerAndroid.clearAll(useWebKit),
+        ...RNCookieManagerAndroid,
         get: (url, useWebKit = false) => RNCookieManagerAndroid.get(url, useWebKit).then(cookieMap => Object.keys(cookieMap).reduce((acc, key) => {
             acc[key] = {
                 name: key,
@@ -29,7 +28,6 @@ if (Platform.OS === 'ios') {
             };
             return acc;
         }, {})),
-        set: (cookie, useWebKit = false) => RNCookieManagerAndroid.set(cookie, useWebKit)
     };
 } else {
     invariant(
@@ -38,15 +36,10 @@ if (Platform.OS === 'ios') {
     );
 }
 
-const functions = ['setFromResponse', 'getFromResponse', 'clearByName'];
-
 module.exports = {
+    ...CookieManager,
     getAll: (useWebKit = false) => CookieManager.getAll(useWebKit),
     clearAll: (useWebKit = false) => CookieManager.clearAll(useWebKit),
     get: (url, useWebKit = false) => CookieManager.get(url, useWebKit),
     set: (cookie, useWebKit = false) => CookieManager.set(cookie, useWebKit)
 };
-
-for (let i = 0; i < functions.length; i++) {
-    module.exports[functions[i]] = CookieManager[functions[i]];
-}
